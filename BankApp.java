@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class BankApp {
     String name;
-    int addr;
+    String addr;
     int accno;
     String type;
     int bal;
@@ -10,15 +10,16 @@ class BankApp {
 
     public BankApp(Scanner scanner) {
         sc = scanner;
-        System.out.print("Enter your name");
+        System.out.println("Welcome to the banking application 😊 ");
+        System.out.print("Enter the customer's name: ");
         name = sc.nextLine();
-        System.out.print("Enter your address");
-        addr = sc.nextInt();
-        System.out.print("Enter your acc no");
-        accno = sc.nextInt();
-        System.out.print("Enter your account type");
+        System.out.print("Enter the address: ");
+        addr = sc.nextLine();
+        System.out.print("Enter your account type: ");
         type = sc.nextLine();
-        System.out.print("Enter your balance");
+        System.out.print("Enter your account number: ");
+        accno = sc.nextInt();
+        System.out.print("Enter the initial balance: ");
         bal = sc.nextInt();
     }
 
@@ -27,7 +28,7 @@ class BankApp {
         int amt = sc.nextInt();
         bal = bal + amt;
         System.out.println("Thank you for depositing");
-        System.out.println("Your current balance is = " + bal);
+        System.out.println("Your current balance is: " + bal);
     }
 
     public void withdraw() {
@@ -35,11 +36,11 @@ class BankApp {
         int amt = sc.nextInt();
         bal = bal - amt;
         System.out.println("Please collect your cash");
-        System.out.println("Your current balance is = " + bal);
+        System.out.println("Your current balance is: " + bal);
     }
 
     public void checkbal() {
-        System.out.println("Account number= " + accno + "\nBalance= " + bal);
+        System.out.println("Account number: " + accno + "\nBalance: " + bal);
     }
 
     public void display() {
@@ -77,12 +78,13 @@ class BankApp {
                 default:
                     System.out.println("Invalid Option");
             }
-            System.out.println("Would you like to continue?");
-            ch = Character.toLowerCase(inp.next().charAt(0));
-            if (ch == 'y') {
+            System.out.println("Would you like to continue (Y/N)?");
+            ch = Character.toUpperCase(inp.next().charAt(0));
+            if (ch == 'Y') {
                 keepOnGoing = true;
-            } else if (ch == 'n') {
+            } else if (ch == 'N') {
                 keepOnGoing = false;
+                System.out.println("Thank you for using the application!!!!");
             } else {
                 System.out.println("Invalid Response exiting !!!");
                 keepOnGoing = false;
