@@ -60,7 +60,7 @@ class BankApp {
         char ch;
         boolean keepOnGoing;
         do {
-            System.out.println("Enter an option");
+            System.out.println("Enter your choice");
             opt = inp.nextInt();
             switch (opt) {
                 case 1:
